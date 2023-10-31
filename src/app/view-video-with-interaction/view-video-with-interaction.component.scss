@@ -1,0 +1,49 @@
+// video player style : start
+.video-container {
+    width: 100%;
+    position: relative;
+    max-width: 600px;
+}
+
+.video-js{
+    width: 100%;
+    height: 360px;
+}
+// video player style : end
+
+// overlay style : start
+::ng-deep .interaction-overlay{
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: #ffffff;
+    position: relative;
+    padding: 30px 15px;
+    font-size: 14px;
+    overflow: scroll;
+
+    .okay-overlay-button{
+        background: #f9f9f9;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 14px;
+        color: #000000;
+    }
+
+    .okay-overlay-button:hover{
+        background: #808080 !important;
+    }
+}
+// overlay style : end
+
+.back-btn{
+    border-radius: 50%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .back-icon{
+        margin-left: -2px;
+    }
+}

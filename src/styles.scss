@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+.video-js .vjs-big-play-button {
+    top: calc(50% - 24px) !important;
+    left: calc(50% - 45px) !important;
+}
+
+.toast-container .ngx-toastr {
+    box-shadow: 0 0 4px #999999 !important;
+    border-radius: 4px !important;
+    font-size: 1rem !important;
+}
+
+// For error toast message
+
+.toast-error {
+    background-color: #ea857b !important;
+}
+
+.toast-title {
+    font-weight: 600 !important;
+    font-size: large !important;
+}

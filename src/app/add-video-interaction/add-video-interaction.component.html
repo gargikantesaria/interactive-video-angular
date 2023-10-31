@@ -1,0 +1,46 @@
+<div class="add-video-interaction-page container mt-5">
+    <div class="row">
+        <!-- display video section -->
+        <div class="col-sm-12 col-lg-6">
+            <div class="mb-3" *ngIf="!uploadedVideoFileInfo">
+                <label for="formFile" class="form-label input-label">Upload Video File : </label>
+                <input class="form-control mt-1" type="file" id="formFile" accept="video/*"
+                    (change)="handleFileInput($event)">
+            </div>
+            <div class="video-container"
+                [ngClass]="{'d-none': !uploadedVideoFileInfo, 'd-block': uploadedVideoFileInfo}">
+                <video #videoPlayer class="video-js"></video>
+            </div>
+            <div class="btn-section mt-4" *ngIf="uploadedVideoFileInfo">
+
+                <button type="button" class="btn btn-secondary" (click)="onAddParagraph()"
+                    [disabled]="!this.isPlayerLoaded">Add
+                    Paragraph</button>
+                <button type="button" class="btn btn-info ms-4" *ngIf="interactionArray.length > 0"
+                    (click)="onPreviewWithInteraction()">Preview with
+                    Interaction</button>
+
+            </div>
+        </div>
+        <!-- add paragraph section -->
+        <div class="col-sm-12 col-lg-6 mt-3 mt-lg-0" *ngIf="isAddParagraphMode">
+            <h3>Add Paragraph</h3>
+            <div class="add-paragraph-form mt-5">
+                <form [formGroup]="addParagraphForm">
+                    <div class="mb-3">
+                        <label for="description" class="form-label input-label">Description
+                            <span class="text-danger">*</span>
+                        </label>
+                        <textarea class="form-control" id="description" rows="3"
+                            formControlName="description"></textarea>
+                        <span
+                            *ngIf="!addParagraphForm.get('description').valid && addParagraphForm.get('description').touched"
+                            class="text-danger">This field is required</span>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-3" (click)="onSubmitParagraph()"
+                        [disabled]="addParagraphForm?.invalid">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

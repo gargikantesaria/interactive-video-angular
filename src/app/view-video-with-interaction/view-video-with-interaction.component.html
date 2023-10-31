@@ -1,0 +1,17 @@
+<div class="add-video-interaction-page container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <!-- back button -->
+            <button type="button" class="btn btn-info back-btn" (click)="onBack()">
+                <img src="assets/images/chevron-left.svg" class="back-icon">
+            </button>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="video-container">
+                <video #videoPlayer class="video-js" width="400" height="300"></video>
+            </div>
+        </div>
+    </div>
+</div>
